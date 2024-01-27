@@ -1,0 +1,16 @@
+syntax = "proto3";
+package buf_lock_issue;
+option go_package = "github.com/george-echo/buf-lock-issue";
+
+import "google/api/annotations.proto";
+
+message HelloReq {}
+message HelloRes {}
+
+service API {
+    rpc Hello(HelloReq) returns (HelloRes) {
+        option (google.api.http) = {
+            get: "/hello"
+        };
+    }
+}
