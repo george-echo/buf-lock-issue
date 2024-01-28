@@ -1,0 +1,10 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: gen/api
+plugins:
+  - plugin: buf.build/protocolbuffers/go:v1.31.0
+    out: .
+  - plugin: buf.build/grpc/go:v1.3.0
+    out: .
